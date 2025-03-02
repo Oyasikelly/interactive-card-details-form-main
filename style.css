@@ -1,0 +1,249 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: white;
+  font-size: 18px;
+}
+
+.container {
+  display: flex;
+  min-height: 100vh;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.card-preview {
+  background: linear-gradient(135deg, hsl(249, 99%, 64%), hsl(278, 94%, 30%));
+  width: 483px;
+  min-height: 100vh;
+  padding: 40px;
+  position: relative;
+  background-image: url("/images/bg-main-desktop.png");
+}
+
+.card-back {
+  background: url("/images/bg-card-back.png");
+  position: absolute;
+  top: 470px;
+  left: 260px;
+  width: 447px;
+  height: 245px;
+  border-radius: 10px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.cvc-display {
+  position: absolute;
+  top: 112px;
+  right: 55px;
+  color: white;
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+
+.card-front {
+  background: url("/images/bg-card-front.png");
+  color: hsl(0, 0%, 100%);
+  padding: 25px;
+  border-radius: 10px;
+  width: 447px;
+  height: 245px;
+  position: absolute;
+  top: 187px;
+  left: 164px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.card-number-display {
+  font-size: 28px;
+  letter-spacing: 3px;
+  margin-top: 60px;
+  margin-bottom: 25px;
+}
+
+.card-details {
+  display: flex;
+  justify-content: space-between;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+
+.form-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  padding: 40px;
+}
+
+form {
+  width: 100%;
+  max-width: 380px;
+}
+
+.form-group {
+  margin-bottom: 26px;
+}
+
+label {
+  display: block;
+  margin-bottom: 9px;
+  color: hsl(278, 68%, 11%);
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+input {
+  width: 100%;
+  padding: 11px 16px;
+  border: 1px solid hsl(270, 3%, 87%);
+  border-radius: 8px;
+  font-size: 18px;
+  color: hsl(278, 68%, 11%);
+}
+
+input::placeholder {
+  color: hsl(279, 6%, 55%);
+}
+
+input:focus {
+  border-image: linear-gradient(135deg, hsl(249, 99%, 64%), hsl(278, 94%, 30%))
+    1;
+  outline: none;
+}
+
+input.error {
+  border-color: hsl(0, 100%, 66%);
+}
+
+.error-message {
+  color: hsl(0, 100%, 66%);
+  font-size: 12px;
+  margin-top: 8px;
+  display: none;
+}
+
+.exp-cvc-container {
+  display: flex;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.exp-inputs {
+  display: flex;
+  gap: 10px;
+}
+
+.exp-inputs input {
+  width: 80px;
+}
+
+#cvc {
+  width: 190px;
+}
+
+#confirm-btn {
+  background: hsl(278, 68%, 11%);
+  color: white;
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.complete-state {
+  display: none;
+  text-align: center;
+  max-width: 380px;
+}
+
+.complete-state h2 {
+  color: hsl(278, 68%, 11%);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin: 35px 0 15px;
+}
+
+.complete-state p {
+  color: hsl(279, 6%, 55%);
+  margin-bottom: 45px;
+}
+
+#continue-btn {
+  background: hsl(278, 68%, 11%);
+  color: white;
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+@media (max-width: 375px) {
+  .container {
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .card-preview {
+    width: 100%;
+    min-height: 240px;
+    background-image: url("/images/bg-main-moile.png");
+    background-size: cover;
+  }
+
+  .card-back {
+    width: 285px;
+    height: 156px;
+    top: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+  }
+
+  .cvc-display {
+    top: 70px;
+    right: 35px;
+    font-size: 12px;
+  }
+
+  .card-front {
+    width: 285px;
+    height: 156px;
+    top: 126px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    padding: 18px;
+  }
+
+  .card-number-display {
+    font-size: 18px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
+
+  .form-container {
+    padding: 90px 24px 45px;
+  }
+
+  .exp-inputs input {
+    width: 70px;
+  }
+
+  #cvc {
+    width: 160px;
+  }
+}

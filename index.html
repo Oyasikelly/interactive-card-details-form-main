@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Credit Card Form</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <div class="card-preview">
+        <div class="card-back">
+          <div class="cvc-display" id="cvc-display">000</div>
+        </div>
+        <div class="card-front">
+          <div class="card-number-display" id="card-number-display">
+            0000 0000 0000 0000
+          </div>
+          <div class="card-details">
+            <div id="cardholder-name-display">JANE APPLESEED</div>
+            <div id="exp-date-display">00/00</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-container">
+        <form id="card-form">
+          <div class="form-group">
+            <label for="cardholder-name">Cardholder Name</label>
+            <input
+              type="text"
+              id="cardholder-name"
+              placeholder="e.g. Jane Appleseed"
+            />
+            <span class="error-message">Can't be blank</span>
+          </div>
+
+          <div class="form-group">
+            <label for="card-number">Card Number</label>
+            <input
+              type="text"
+              id="card-number"
+              placeholder="e.g. 1234 5678 9123 0000"
+            />
+            <span class="error-message">Wrong format, numbers only</span>
+          </div>
+
+          <div class="exp-cvc-container">
+            <div class="form-group">
+              <label>Exp. Date (MM/YY)</label>
+              <div class="exp-inputs">
+                <input type="text" id="exp-mm" placeholder="MM" maxlength="2" />
+                <input type="text" id="exp-yy" placeholder="YY" maxlength="2" />
+              </div>
+              <span class="error-message">Can't be blank</span>
+            </div>
+
+            <div class="form-group">
+              <label for="cvc">CVC</label>
+              <input
+                type="text"
+                id="cvc"
+                placeholder="e.g. 123"
+                maxlength="3"
+              />
+              <span class="error-message">Can't be blank</span>
+            </div>
+          </div>
+
+          <button type="submit" id="confirm-btn">Confirm</button>
+        </form>
+
+        <div class="complete-state">
+          <svg
+            width="80"
+            height="80"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle cx="40" cy="40" r="40" fill="url(#a)" />
+            <path d="M28 39.92 36.08 48l16-16" stroke="#fff" stroke-width="3" />
+          </svg>
+          <h2>Thank You!</h2>
+          <p>We've added your card details</p>
+          <button id="continue-btn">Continue</button>
+        </div>
+      </div>
+    </main>
+
+    <script src="/main.js"></script>
+  </body>
+</html>
